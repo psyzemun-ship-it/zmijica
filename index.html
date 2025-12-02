@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="sr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Zmijica</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/main.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="app-header">
+        <div>
+          <h1>Zmijica</h1>
+          <p>Modularna web igrica inspirisana klasikom.</p>
+        </div>
+        <button id="restart-btn" class="ghost-btn" type="button">Nova igra</button>
+      </header>
+
+      <section class="game-pane">
+        <article class="hud-card">
+          <div class="metric">
+            <span>Rezultat</span>
+            <strong id="score-value">0</strong>
+          </div>
+          <div class="metric">
+            <span>Rekord</span>
+            <strong id="best-value">0</strong>
+          </div>
+          <div class="metric">
+            <span>Brzina</span>
+            <strong id="speed-value">1x</strong>
+          </div>
+        </article>
+
+        <div class="canvas-wrapper">
+          <canvas id="game-canvas" width="640" height="640" aria-label="tabla za igru"></canvas>
+          <div id="overlay" class="overlay" hidden>
+            <h2 id="overlay-title">Spremno!</h2>
+            <p id="overlay-text">Pritisni bilo koji smer da započneš.</p>
+          </div>
+        </div>
+
+        <article class="controls-card">
+          <h3>Kontrole</h3>
+          <p>Koristi strelice ili WASD. Na telefonu, dodirni strelice ispod.</p>
+          <div class="touch-controls">
+            <button type="button" class="control-btn" data-direction="up">▲</button>
+            <div class="middle-row">
+              <button type="button" class="control-btn" data-direction="left">◀</button>
+              <button type="button" class="control-btn" data-direction="down">▼</button>
+              <button type="button" class="control-btn" data-direction="right">▶</button>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <footer class="app-footer">
+        <p>
+          Napravljeno sa ❤️ · Modularni JS · Bez biblioteka ·
+          <a href="https://github.com/" target="_blank" rel="noreferrer">GitHub inspiracija</a>
+        </p>
+      </footer>
+    </main>
+    <script src="scripts/app.js" defer></script>
+  </body>
+</html>
+
