@@ -78,6 +78,12 @@ export class Game {
   }
 
   endGame() {
+    // zaštita od buga gde igra odmah javlja kraj pri samom startu
+    if (this.score === 0 && this.snake && this.snake.steps === 0) {
+      this.reset();
+      return;
+    }
+
     this.running = false;
     if (this.score > this.bestScore) {
       this.bestScore = this.score;
