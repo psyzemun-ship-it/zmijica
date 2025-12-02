@@ -44,13 +44,15 @@ export class Game {
   }
 
   update() {
+    // ako iz bilo kog razloga zmijica nije živa na početku frame-a, samo resetuj igru
     if (!this.snake.alive) {
-      this.endGame();
+      this.reset();
       return;
     }
     this.snake.update();
+    // ako je došlo do sudara, umesto ekrana "Kraj igre" odmah resetujemo
     if (!this.snake.alive) {
-      this.endGame();
+      this.reset();
       return;
     }
     if (this.snake.intersects(this.food.position)) {
